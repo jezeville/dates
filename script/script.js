@@ -53,14 +53,14 @@ nextTime(60000);
     //Partie haute
 
     let leftTop = document.querySelector('.box__left__top');
-    leftTop.innerHTML = new Date().toLocaleString('fr-FR', { weekday: 'long' }).substring(0,3);
+    leftTop.innerHTML = new Date().toLocaleString('fr-FR', { weekday: 'short' });
 
     //Partie milieu
 
     let leftMiddle = document.querySelector('.box__left__middle');
     let dateChiffre = new Date().getDate();
-    let dateMonth = new Date().toLocaleString('fr-FR', {month : 'long'});
-    leftMiddle.innerHTML = dateChiffre + " " + dateMonth.substring(0 , 3);
+    let dateMonth = new Date().toLocaleString('fr-FR', {month : 'short'});
+    leftMiddle.innerHTML = dateChiffre + " " + dateMonth;
 
     //Partie bas
 
@@ -71,6 +71,7 @@ nextTime(60000);
 let changementHeure = true;
 
 let right = document.querySelector('.box__right');
+
 let temps = () => {
     let options = {hour12: !changementHeure ,hour: 'numeric',minute: 'numeric',second: 'numeric'};
     right.innerHTML = new Date().toLocaleString('fr-FR', options);
